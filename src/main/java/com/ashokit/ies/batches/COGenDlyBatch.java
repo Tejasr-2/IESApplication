@@ -18,7 +18,7 @@ public class COGenDlyBatch {
 	@Autowired
 	COTriggersService coTriggersService;
 
-	public void preProccess(String batchName) {
+	public void preProcess(String batchName) {
 		BatchRunDetails batch = new BatchRunDetails();
 		batch.setBatchName(batchName);
 		batch.setBatchRunStatus("Starting");
