@@ -26,7 +26,7 @@ public class COTriggersServiceIMPL implements COTriggersService {
 	}
 
 	@Override
-	public List<COTriggers> findByTrigger(String status) {
+	public List<COTriggers> findByTriggerStatus(String status) {
 
 		List<COTriggersEntity> entities = coTriggerRepo.findByTrgStatus(status);
 

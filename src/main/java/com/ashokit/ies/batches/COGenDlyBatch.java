@@ -30,7 +30,7 @@ public class COGenDlyBatch {
 	public void start(BatchRunDetails batch) {
 
 		batch.setBatchRunStatus("Started");
-		List<COTriggers> triggers = coTriggersService.findByTrigger("P");
+		List<COTriggers> triggers = coTriggersService.findByTriggerStatus("P");
 		for (COTriggers trigger : triggers) {
 			process(trigger);	
 		}

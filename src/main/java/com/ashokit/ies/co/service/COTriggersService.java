@@ -7,6 +7,6 @@ import com.ashokit.ies.co.domain.COTriggers;
 public interface COTriggersService {
 	
 	public boolean save(COTriggers trigger);
-	public List<COTriggers> findByTrigger(String status);
+	public List<COTriggers> findByTriggerStatus(String status);
 
 }
