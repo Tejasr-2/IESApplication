@@ -24,12 +24,14 @@ public class COGenDlyBatch {
 		batch.setBatchRunStatus("Starting");
 		// SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		batch.setStartDate(new Date());
+		batchRunDetailsService.save(batch);
 		start(batch);
 	}
 
 	public void start(BatchRunDetails batch) {
 
 		batch.setBatchRunStatus("Started");
+		batchRunDetailsService.save(batch);
 		List<COTriggers> triggers = coTriggersService.findByTriggerStatus("P");
 		for (COTriggers trigger : triggers) {
 			process(trigger);	
@@ -46,6 +48,7 @@ public class COGenDlyBatch {
 		batch.setBatchRunStatus("Ended");
 		// SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		batch.setEndDate(new Date());
+		batchRunDetailsService.save(batch);
 
 	}
 }
